@@ -1,6 +1,7 @@
 import {Shape} from "./Shape";
+import {Colorable} from "./Colorable";
 
-export class Rectangle extends Shape {
+export class Rectangle extends Shape implements Colorable {
     width: number;
     height: number;
 
@@ -18,5 +19,13 @@ export class Rectangle extends Shape {
 
     calculatePerimeter(): number {
         return (this.width + this.height) * 2;
+    }
+
+    checkColorable(): boolean {
+        return false;
+    }
+
+    howToColor(): string {
+        return 'Color all four sides.';
     }
 }
